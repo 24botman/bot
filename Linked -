@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main(){
+    int n,i,start[10],next[10];
+    printf("Enter number of blocks: "); scanf("%d",&n);
+    printf("Enter block links:\n");
+    for(i=0;i<n;i++) scanf("%d%d",&start[i],&next[i]);
+    printf("Linked allocation:\n");
+    for(i=0;i<n;i++) printf("%d -> %d\n",start[i],next[i]);
+}
+
+o/p:
+
+
+Enter number of blocks: 3
+Enter block links:
+5 6
+6 7
+7 -1
+Linked allocation:
+5 -> 6
+6 -> 7
+7 -> -1
