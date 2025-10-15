@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n, bt[10], wt[10], tat[10], i;
+    float avgwt = 0, avgtat = 0;
+    printf("Enter number of processes: "); scanf("%d", &n);
+    printf("Enter burst times: ");
+    for(i = 0; i < n; i++) scanf("%d", &bt[i]);
+
+    wt[0] = 0;
+    for(i = 1; i < n; i++) wt[i] = bt[i-1] + wt[i-1];
+
+    for(i = 0; i < n; i++) {
+        tat[i] = bt[i] + wt[i];
+        avgwt += wt[i];
+        avgtat += tat[i];
+    }
+
+    printf("\nP\tBT\tWT\tTAT");
+    for(i = 0; i < n; i++)
+        printf("\nP%d\t%d\t%d\t%d", i+1, bt[i], wt[i], tat[i]);
+
+    printf("\nAverage WT=%.2f, TAT=%.2f", avgwt/n, avgtat/n);
+}
