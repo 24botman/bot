@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+    int n,s,l,i; int files[50]={0};
+    printf("Enter start block & length: "); scanf("%d%d",&s,&l);
+    for(i=s;i<s+l;i++) files[i]=1;
+    printf("Allocated blocks: ");
+    for(i=0;i<50;i++) if(files[i]) printf("%d ",i);
+}
+
+
+
+Enter start block & length: 5 4
+Allocated blocks: 5 6 7 8
