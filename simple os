@@ -1,0 +1,106 @@
+🟩 1️⃣ Factorial Program
+#include <stdio.h>
+int main() {
+    int n, i; long long f = 1;
+    printf("Enter number: "); scanf("%d", &n);
+    if (n < 0) printf("No factorial for negative!");
+    else {
+        for (i = 1; i <= n; i++) f *= i;
+        printf("Factorial = %lld", f);
+    }
+}
+
+
+Output:
+
+Enter number: 5
+Factorial = 120
+
+🟩 2️⃣ Fibonacci Series
+#include <stdio.h>
+int main() {
+    int n, i, a = 0, b = 1, c;
+    printf("Enter terms: "); scanf("%d", &n);
+    printf("Fibonacci: ");
+    for (i = 1; i <= n; i++) {
+        printf("%d ", a);
+        c = a + b; a = b; b = c;
+    }
+}
+
+
+Output:
+
+Enter terms: 7
+Fibonacci: 0 1 1 2 3 5 8
+
+🟩 3️⃣ Multiplication Table
+#include <stdio.h>
+int main() {
+    int n, i;
+    printf("Enter number: "); scanf("%d", &n);
+    for (i = 1; i <= 10; i++)
+        printf("%d x %d = %d\n", n, i, n * i);
+}
+
+
+Output:
+
+Enter number: 6
+6 x 1 = 6
+6 x 2 = 12
+...
+6 x 10 = 60
+
+🟩 4️⃣ Armstrong Number
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int n, t, r, c = 0; double s = 0;
+    printf("Enter number: "); scanf("%d", &n);
+    t = n;
+    while (t) { c++; t /= 10; }
+    t = n;
+    while (t) { r = t % 10; s += pow(r, c); t /= 10; }
+    if ((int)s == n) printf("Armstrong");
+    else printf("Not Armstrong");
+}
+
+
+Output:
+
+Enter number: 153
+Armstrong
+
+🟩 5️⃣ Sum of Digits
+#include <stdio.h>
+int main() {
+    int n, s = 0;
+    printf("Enter number: "); scanf("%d", &n);
+    if (n < 0) n = -n;
+    while (n) { s += n % 10; n /= 10; }
+    printf("Sum = %d", s);
+}
+
+
+Output:
+
+Enter number: 1234
+Sum = 10
+
+🟩 6️⃣ Sum of Array Elements
+#include <stdio.h>
+int main() {
+    int n, i, a[100], s = 0;
+    printf("Enter n: "); scanf("%d", &n);
+    for (i = 0; i < n; i++) scanf("%d", &a[i]);
+    for (i = 0; i < n; i++) s += a[i];
+    printf("Sum = %d", s);
+}
+
+
+Output:
+
+Enter n: 5
+2 4 6 8 10
+Sum = 30
